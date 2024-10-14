@@ -1,0 +1,33 @@
+Problem 1: Barbecue problem
+Initial Thoughts:
+The problem revolves around tallying votes to exclude one family member, with tie-breaking rules. My initial idea is to maintain two counts:
++ Votes received: Track how many times each member was voted for.
++ Votes given: Track how many times each member cast votes.
+With these counts, I can:
++ Identify the member with the most votes against them.
++ If there's a tie, check who gave the most votes.
++ If a tie persists, select the member with the smallest index.
++ The constraints (maximum n = 20 and up to 50 votes) suggest that a brute force approach with multiple iterations over the data is feasible.
+
+Reflection:
+Implementing the solution was straightforward. However, I noticed that for cases with no votes (voter and excluded both empty), the answer defaults to index 0. 
+
+Problem 2: Multiple problem
+The first solution I could think of is to  iterate through every number in the range and check if it’s divisible by factor. But since the range can be very large, this approach would be too slow. So I change the way to solve the problem by using mathematical reasoning. The number of multiples of factor within a range can be efficiently determined by:
++ Finding the largest multiple of factor ≤ max.
++ Finding the smallest multiple of factor ≥ min.
+Using these two numbers to calculate the total count of multiples in the range.
+
+Problem 3: CatGame problem
+Initial Thoughts:
+At first, I thought this problem would require a brute force approach, trying every possible movement combination for each cat. However, since there are too many combinations (exponential time), it became clear that I needed to find an optimized strategy. Sorting the coordinates and focusing on the extreme values (leftmost and rightmost) allowed me to quickly explore only a few key movement patterns. This reduced the complexity and gave a neat solution.
+
+Reflection:
+This problem emphasizes the importance of looking for patterns and constraints to avoid brute force. By understanding that the minimum difference can only be affected by the extreme values, I was able to drastically reduce the search space. This was a great reminder to always think about edge cases and optimization opportunities early on.
+
+Problem 4: SimpleDuplicateRemover problem
+Initial Thoughts:
+This problem can be solved in linear time by using a set to keep track of seen elements. The main challenge is to preserve the rightmost occurrence of each duplicate, which is easily achieved by traversing from right to left.
+
+Reflection:
+The use of a set for tracking duplicates ensures the solution is both simple and efficient. Handling the reversal at the end is a small trade-off for simplicity.
